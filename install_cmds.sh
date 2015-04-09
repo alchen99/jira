@@ -23,7 +23,7 @@ apt-get -y update
 echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
 apt-get -y install libpq-dev oracle-java8-installer
 
-## Install Atlassian Jira
+# Install Atlassian Jira
 sh /opt/atlassian-$AppName-$AppVer-$Arch.bin -q -varfile /opt/response.varfile
 mkdir -p /opt/atlassian/jira/conf/Catalina/localhost
 
@@ -33,3 +33,4 @@ rm -f /opt/atlassian-$AppName-$AppVer-$Arch.bin
 apt-get clean
 apt-get autoclean
 apt-get autoremove
+rm -f /var/lib/apt/lists/*
